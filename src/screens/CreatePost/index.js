@@ -15,6 +15,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {addNewPost} from '../../redux/user/userSlice';
 import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
+import {Images} from '../../assets';
 
 const CreatePost = () => {
   const {userList, postList} = useSelector(state => state.user);
@@ -124,6 +125,11 @@ const CreatePost = () => {
     // );
   };
 
+  const removeImage = item => {
+    const filteredArray = images.filter(val => val !== item);
+    setImages(filteredArray);
+  };
+
   const submitBtnBackground =
     description !== '' && images.length > 0 ? '#2986f0' : '#8f8f8f';
 
@@ -166,11 +172,18 @@ const CreatePost = () => {
 
       <ScrollView horizontal style={styles.scrollStyle}>
         {images.map((image, index) => (
-          <Image
-            key={index}
-            source={{uri: image}}
-            style={styles.imageContainer}
-          />
+          <View key={index} style={styles.listImageContainer}>
+            <Image source={{uri: image}} style={styles.imageContainer} />
+            <TouchableOpacity
+              onPress={() => removeImage(image)}
+              style={styles.btnWrapper}>
+              <Image
+                source={Images.closeIcon}
+                resizeMode="contain"
+                style={styles.closeIcon}
+              />
+            </TouchableOpacity>
+          </View>
         ))}
       </ScrollView>
 

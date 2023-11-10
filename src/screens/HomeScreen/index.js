@@ -17,8 +17,8 @@ const HomeScreen = () => {
   const [isPostTabVisible, setIsPostTabVisible] = useState(false);
 
   useEffect(() => {
-    setIsUserTabVisible(true);
-    setIsPostTabVisible(false);
+    // setIsUserTabVisible(true);
+    // setIsPostTabVisible(false);
   }, [isFocused]);
 
   const handleTabChanges = key => {

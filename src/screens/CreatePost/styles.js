@@ -1,9 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    marginTop: Platform.OS === 'ios' ? 30 : 0,
   },
   submitBtnContainer: {
     borderRadius: 50,
@@ -36,7 +37,8 @@ export const styles = StyleSheet.create({
   imageContainer: {
     width: 100,
     height: 100,
-    marginRight: 10,
+    alignSelf: 'center',
+    marginTop: 15,
   },
   optionModalContainer: {
     flex: 1,
@@ -49,5 +51,20 @@ export const styles = StyleSheet.create({
   modalBtnText: {
     fontSize: 18,
     padding: 10,
+  },
+  listImageContainer: {
+    height: 130,
+    width: 130,
+  },
+  btnWrapper: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    position: 'absolute',
+    top: 8,
+    right: 8,
+  },
+  closeIcon: {
+    height: 20,
+    width: 20,
   },
 });

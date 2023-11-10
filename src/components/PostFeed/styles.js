@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
-    padding: 20,
+    paddingHorizontal: 60,
   },
   modalImage: {
     width: 300,
@@ -58,5 +58,9 @@ export const styles = StyleSheet.create({
   highlightedText: {
     fontWeight: 'bold',
     color: '#000',
+  },
+  textStyle: {
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });

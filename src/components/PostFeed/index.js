@@ -56,7 +56,7 @@ const PostFeed = ({postList, handleLikeFlow}) => {
     <View style={styles.container}>
       <ScrollView>
         {postList?.length > 0 ? (
-          postList.map(item => {
+          [...postList]?.reverse().map(item => {
             return (
               <View key={item.id} style={styles.postContainer}>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -90,7 +90,7 @@ const PostFeed = ({postList, handleLikeFlow}) => {
             );
           })
         ) : (
-          <Text>There is no post available!</Text>
+          <Text style={styles.textStyle}>There is no post available!</Text>
         )}
       </ScrollView>
 
