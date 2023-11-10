@@ -1,12 +1,13 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {colors, isIOS} from '../../utils/constants';
 
 export const styles = StyleSheet.create({
   container: {
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
-    marginTop: Platform.OS === 'ios' ? 30 : 0,
+    backgroundColor: colors.white,
+    marginTop: isIOS() ? 30 : 0,
   },
   subContainer: {
     flexDirection: 'row',
@@ -15,13 +16,15 @@ export const styles = StyleSheet.create({
   },
   tabButtonStyle: {
     marginRight: 30,
-    borderRadius: 50,
-    width: 70,
+    borderRadius: 40,
+    width: 80,
+    paddingVertical: 10,
   },
   tabButtonStyle2: {
     marginLeft: 10,
     borderRadius: 50,
-    width: 70,
+    width: 80,
+    paddingVertical: 10,
   },
   tabButtonTextStyle: {
     fontWeight: 'bold',
@@ -30,8 +33,8 @@ export const styles = StyleSheet.create({
   floatingButtonStyle: {
     position: 'absolute',
     bottom: 20,
-    left: 160,
-    backgroundColor: '#2986f0',
+    left: 180,
+    backgroundColor: colors.blue,
     borderRadius: 50,
     width: 60,
     height: 60,
@@ -39,7 +42,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnTextStyle: {
-    color: 'white',
+    color: colors.white,
     fontSize: 24,
   },
 });

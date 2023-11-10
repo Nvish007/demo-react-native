@@ -16,6 +16,7 @@ import {addNewPost} from '../../redux/user/userSlice';
 import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 import {Images} from '../../assets';
+import {colors} from '../../utils/constants';
 
 const CreatePost = () => {
   const {userList, postList} = useSelector(state => state.user);
@@ -125,13 +126,18 @@ const CreatePost = () => {
     // );
   };
 
+  const isAvailableInDescription = name => {
+    const descriptionParts = description.split(' ').includes(`@${name}`);
+    return descriptionParts;
+  };
+
   const removeImage = item => {
     const filteredArray = images.filter(val => val !== item);
     setImages(filteredArray);
   };
 
   const submitBtnBackground =
-    description !== '' && images.length > 0 ? '#2986f0' : '#8f8f8f';
+    description !== '' && images.length > 0 ? colors.blue : colors.gray;
 
   return (
     <View style={styles.container}>
@@ -160,6 +166,7 @@ const CreatePost = () => {
           <ScrollView>
             {filteredFollowingUsers?.map(user => (
               <Button
+                disabled={isAvailableInDescription(user.Name)}
                 key={user.Id}
                 title={user.Name}
                 onPress={() => handleUserSelect(user.Name)}

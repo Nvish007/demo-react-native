@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { colors } from '../../utils/constants';
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,7 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // backgroundColor: '#fff',
   },
   listView: {
     flexDirection: 'row',
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   userText: {
     fontWeight: 'bold',
-    color: '#000',
+    color: colors.black,
     position: 'absolute',
     left: 20,
     top: 12,
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   btnTextStyle: {
     alignSelf: 'center',
     fontWeight: 'bold',
-    color: '#fff',
+    color: colors.white,
     fontSize: 12,
   },
 });

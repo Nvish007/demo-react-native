@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import UserList from '../../components/UserList';
 import PostFeed from '../../components/PostFeed';
 import {toggleFollow, toggleLikeFlow} from '../../redux/user/userSlice';
+import {colors} from '../../utils/constants';
 import {styles} from './styles';
 
 const HomeScreen = () => {
@@ -43,8 +44,8 @@ const HomeScreen = () => {
     dispatch(toggleLikeFlow(id));
   };
 
-  const usersTabBackgroundColor = isUserTabVisible ? '#8f8f8f' : '#fff';
-  const postTabBackgroundColor = isPostTabVisible ? '#8f8f8f' : '#fff';
+  const usersTabBackgroundColor = isUserTabVisible ? colors.gray : colors.white;
+  const postTabBackgroundColor = isPostTabVisible ? colors.gray : colors.white;
   return (
     <>
       <View style={styles.container}>

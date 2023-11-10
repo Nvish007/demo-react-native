@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../utils/constants';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,7 +7,6 @@ export const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'center',
     marginTop: 80,
-    // backgroundColor: '#fff',
   },
   postContainer: {
     height: 210,
@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
     padding: 16,
     borderRadius: 8,
-    backgroundColor: 'white',
-    shadowColor: '#000',
+    backgroundColor: colors.white,
+    shadowColor: colors.black,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    backgroundColor: colors.shadowColor,
     paddingHorizontal: 60,
   },
   modalImage: {
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   modalDescription: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
     marginTop: 16,
   },
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
   },
   highlightedText: {
     fontWeight: 'bold',
-    color: '#000',
+    color: colors.black,
   },
   textStyle: {
     alignSelf: 'center',

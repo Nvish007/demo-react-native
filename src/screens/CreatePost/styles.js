@@ -1,10 +1,11 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {colors, isIOS} from '../../utils/constants';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    marginTop: Platform.OS === 'ios' ? 30 : 0,
+    marginTop: isIOS() ? 30 : 0,
   },
   submitBtnContainer: {
     borderRadius: 50,
@@ -15,14 +16,15 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   submitBtnText: {
-    color: 'white',
+    color: colors.white,
     fontWeight: 'bold',
   },
   inputStyle: {
     marginTop: 20,
-    padding: 10,
+    padding: isIOS() ? 50 : 10,
     borderColor: 'gray',
     borderWidth: 1,
+    textAlign: 'center',
   },
   modalContainer: {
     flex: 1,
@@ -45,7 +47,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   optionModalSubContainer: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     padding: 16,
   },
   modalBtnText: {
@@ -57,7 +59,7 @@ export const styles = StyleSheet.create({
     width: 130,
   },
   btnWrapper: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderRadius: 10,
     position: 'absolute',
     top: 8,

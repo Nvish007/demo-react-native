@@ -1,6 +1,7 @@
 import React from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
+import {colors} from '../../utils/constants';
 
 const UserList = ({userList, handleChaneFollowingStatus}) => {
   return (
@@ -8,7 +9,9 @@ const UserList = ({userList, handleChaneFollowingStatus}) => {
       <ScrollView>
         {userList?.length > 0 &&
           userList.map((item, key) => {
-            const buttonBackgroundColor = item.isFollowing ? '#000' : '#2986f0';
+            const buttonBackgroundColor = item.isFollowing
+              ? colors.black
+              : colors.blue;
             return (
               <View key={item.Id} style={styles.listView}>
                 <Text style={styles.userText}> {item.Name}</Text>

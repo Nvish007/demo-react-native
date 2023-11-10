@@ -1,3 +1,15 @@
+import {Platform} from 'react-native';
+
+export const colors = {
+  black: '#000',
+  blue: '#2986f0',
+  gray: '#8f8f8f',
+  shadowColor: 'rgba(0, 0, 0, 0.9)',
+  white: '#fff',
+};
+
+export const isIOS = () => Platform.OS === 'ios';
+
 export const usersData = [
   {
     Id: 0,
